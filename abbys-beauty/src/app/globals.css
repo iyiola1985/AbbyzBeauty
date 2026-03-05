@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FDFBFB;
+  --foreground: #1a1a1a;
+  --soft-pink: #F5E1E6;
+  --soft-pink-dark: #E8D1D8;
+  --nude-beige: #E8DED5;
+  --nude-beige-dark: #D4C9BD;
+  --accent-pink: #E91E8C;
+  --accent-pink-light: #F48FB1;
+  --black: #1a1a1a;
+  --white: #FFFFFF;
+  --shadow-soft: 0 4px 20px rgba(233, 30, 140, 0.08);
+  --shadow-hover: 0 12px 40px rgba(233, 30, 140, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-heading), ui-serif, Georgia, serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for luxury feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--soft-pink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-pink);
+  border-radius: 4px;
+}
