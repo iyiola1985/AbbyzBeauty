@@ -1,21 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
-const services = [
-  "Classic Set",
-  "Hybrid Set",
-  "Russian / Volume Set",
-  "Mega Volume Set",
-  "Wispy Set",
-  "Bottom Lashes",
-  "Spikes Add-on",
-  "Full Glam Makeup (Strip Lashes)",
-  "Full Glam Makeup (No Strip Lashes)",
-];
+import { services, getDepositForService, WHATSAPP_NUMBER } from "@/lib/services";
 
 export default function Booking() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -26,53 +15,78 @@ export default function Booking() {
     notes: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const deposit = formData.service ? getDepositForService(formData.service) : 0;
+
+  const [lastDeposit, setLastDeposit] = useState(0);
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/booking", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setFormData({ name: "", phone: "", email: "", service: "", date: "", time: "", notes: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    const dep = getDepositForService(formData.service);
+    setLastDeposit(dep);
+
+    const message = [
+      `Hi! I'd like to book an appointment at Abbyz Beautyy`,
+      ``,
+      `*My Details:*`,
+      `Name: ${formData.name}`,
+      `Phone: ${formData.phone}`,
+      `Email: ${formData.email}`,
+      ``,
+      `*Booking:*`,
+      `Service: ${formData.service}`,
+      `Date: ${formData.date}`,
+      `Time: ${formData.time}`,
+      formData.notes ? `Notes: ${formData.notes}` : "",
+      ``,
+      `*Deposit:* £${dep} (I'm ready to pay to confirm my booking)`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const encoded = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    setStatus("success");
+    setFormData({ name: "", phone: "", email: "", service: "", date: "", time: "", notes: "" });
   };
 
   return (
     <section id="booking" className="scroll-reveal py-20 sm:py-28 bg-white">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-[#E91E8C] font-medium tracking-[0.2em] uppercase text-sm text-center mb-4">
+        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base text-center mb-4">
           Book Your Appointment
         </p>
-        <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[#1a1a1a] text-center mb-12">
+        <h2 className="unifrakturcook-bold text-3xl sm:text-4xl text-[#1a1a1a] text-center mb-12">
           Ready for Your Glam Experience?
         </h2>
+
+        <div className="mb-8 p-6 bg-[#F5E1E6]/30 rounded-2xl border border-[#F5E1E6]">
+          <p className="playfair-display-sc-regular text-[#1a1a1a]/90 text-center">
+            <span className="font-semibold text-[#E91E8C]">Deposit required</span> to confirm your
+            booking. You&apos;ll pay via WhatsApp after submitting.
+          </p>
+        </div>
 
         {status === "success" && (
           <div className="booking-success mb-8 p-6 bg-[#F5E1E6]/50 rounded-2xl text-center text-[#1a1a1a]">
             <span className="text-4xl mb-2 block">✨</span>
-            <p className="font-semibold">Thank you! Your booking request has been received.</p>
-            <p className="text-sm mt-1 opacity-80">We&apos;ll contact you shortly to confirm.</p>
+            <p className="font-semibold">WhatsApp has opened!</p>
+            <p className="text-sm mt-1 opacity-80">
+              Send the message and pay your £{lastDeposit} deposit to confirm your booking.
+            </p>
           </div>
         )}
 
         {status === "error" && (
           <div className="mb-8 p-4 bg-red-50 rounded-2xl text-red-700 text-center text-sm">
-            Something went wrong. Please try again or contact us directly via WhatsApp.
+            Please try again or contact us directly via WhatsApp.
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-[#1a1a1a] mb-1">
+            <label htmlFor="name" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
               Name
             </label>
             <input
@@ -86,7 +100,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-[#1a1a1a] mb-1">
+            <label htmlFor="phone" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
               Phone
             </label>
             <input
@@ -100,7 +114,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-[#1a1a1a] mb-1">
+            <label htmlFor="email" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
               Email
             </label>
             <input
@@ -114,7 +128,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label htmlFor="service" className="block text-sm font-medium text-[#1a1a1a] mb-1">
+            <label htmlFor="service" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
               Service
             </label>
             <select
@@ -126,15 +140,27 @@ export default function Booking() {
             >
               <option value="">Select a service</option>
               {services.map((s) => (
-                <option key={s} value={s}>
-                  {s}
+                <option key={s.name} value={s.name}>
+                  {s.name} — £{s.price} (deposit £{s.deposit})
                 </option>
               ))}
             </select>
           </div>
+
+          {deposit > 0 && (
+            <div className="p-4 rounded-xl bg-[#E91E8C]/10 border border-[#E91E8C]/20">
+              <p className="text-sm font-medium text-[#1a1a1a]">
+                Deposit to pay via WhatsApp: <span className="oi-regular text-[#E91E8C] text-base">£{deposit}</span>
+              </p>
+              <p className="text-xs text-[#1a1a1a]/70 mt-1">
+                You&apos;ll be redirected to WhatsApp to send your booking and pay the deposit.
+              </p>
+            </div>
+          )}
+
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="date" className="block text-sm font-medium text-[#1a1a1a] mb-1">
+              <label htmlFor="date" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
                 Preferred Date
               </label>
               <input
@@ -147,7 +173,7 @@ export default function Booking() {
               />
             </div>
             <div>
-              <label htmlFor="time" className="block text-sm font-medium text-[#1a1a1a] mb-1">
+              <label htmlFor="time" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
                 Preferred Time
               </label>
               <input
@@ -161,7 +187,7 @@ export default function Booking() {
             </div>
           </div>
           <div>
-            <label htmlFor="notes" className="block text-sm font-medium text-[#1a1a1a] mb-1">
+            <label htmlFor="notes" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
               Notes
             </label>
             <textarea
@@ -175,10 +201,12 @@ export default function Booking() {
           </div>
           <button
             type="submit"
-            disabled={status === "loading"}
-            className="w-full py-4 bg-[#E91E8C] text-white font-medium rounded-xl hover:bg-[#d0187a] hover:shadow-[0_0_30px_rgba(233,30,140,0.4)] transition-all duration-500 disabled:opacity-70"
+            className="w-full py-4 bg-[#E91E8C] text-white oi-regular rounded-xl hover:bg-[#d0187a] hover:shadow-[0_0_30px_rgba(233,30,140,0.4)] transition-all duration-500 flex items-center justify-center gap-2 text-lg"
           >
-            {status === "loading" ? "Sending..." : "Book Appointment"}
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            </svg>
+            Book & Pay Deposit via WhatsApp
           </button>
         </form>
       </div>

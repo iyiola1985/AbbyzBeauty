@@ -30,8 +30,8 @@ function ServiceCard({
       <span className="text-xs font-medium text-[#E91E8C] tracking-wider uppercase">
         {category}
       </span>
-      <h3 className="font-serif text-xl font-semibold text-[#1a1a1a] mt-2 mb-1">{name}</h3>
-      <p className="text-2xl font-semibold text-[#E91E8C]">£{price}</p>
+      <h3 className="playfair-display-sc-bold text-xl text-[#1a1a1a] mt-2 mb-1 tracking-tight">{name}</h3>
+      <p className="oi-regular text-2xl text-[#E91E8C]">£{price}</p>
       <a
         href="#booking"
         className="mt-4 inline-block text-sm font-medium text-[#E91E8C] hover:underline"
@@ -46,13 +46,13 @@ export default function Services() {
   return (
     <section id="services" className="scroll-reveal py-20 sm:py-28 bg-[#F5E1E6]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-[#E91E8C] font-medium tracking-[0.2em] uppercase text-sm text-center mb-4">
+        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base text-center mb-4">
           Our Pricing
         </p>
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#1a1a1a] text-center mb-4">
+        <h2 className="unifrakturcook-bold text-3xl sm:text-4xl md:text-5xl text-[#1a1a1a] text-center mb-4">
           Price List
         </h2>
-        <p className="text-[#1a1a1a]/70 text-center max-w-2xl mx-auto mb-16">
+        <p className="playfair-display-sc-regular text-[#1a1a1a]/70 text-center max-w-2xl mx-auto mb-16">
           From classic lashes to full glam—transparent pricing for every style.
         </p>
 

@@ -44,13 +44,13 @@ export default function Gallery() {
   return (
     <section id="gallery" className="scroll-reveal py-20 sm:py-28 bg-[#FDFBFB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-[#E91E8C] font-medium tracking-[0.2em] uppercase text-sm text-center mb-4">
+        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base text-center mb-4">
           Portfolio
         </p>
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#1a1a1a] text-center mb-4">
+        <h2 className="unifrakturcook-bold text-3xl sm:text-4xl md:text-5xl text-[#1a1a1a] text-center mb-4">
           Gallery
         </h2>
-        <p className="text-[#1a1a1a]/70 text-center max-w-2xl mx-auto mb-16">
+        <p className="playfair-display-sc-regular text-[#1a1a1a]/70 text-center max-w-2xl mx-auto mb-16">
           Explore our latest work—from classic lashes to mega volume and glam transformations.
         </p>
 

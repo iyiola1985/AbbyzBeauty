@@ -1,7 +1,9 @@
 "use client";
 
+import { WHATSAPP_NUMBER } from "@/lib/services";
+
 const INSTAGRAM = "https://instagram.com/abbyzbeautyy";
-const WHATSAPP = "https://wa.me/44XXXXXXXXXX";
+const WHATSAPP = `https://wa.me/${WHATSAPP_NUMBER}`;
 const PHONE = "+44 XXXX XXX XXX";
 const LOCATION = "London, UK";
 
@@ -9,10 +11,10 @@ export default function Contact() {
   return (
     <section id="contact" className="scroll-reveal py-20 sm:py-28 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-[#E91E8C] font-medium tracking-[0.2em] uppercase text-sm mb-4">
+        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base mb-4">
           Get In Touch
         </p>
-        <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[#1a1a1a] mb-12">
+        <h2 className="unifrakturcook-bold text-3xl sm:text-4xl text-[#1a1a1a] mb-12">
           Contact Us
         </h2>
 
@@ -29,7 +31,7 @@ export default function Contact() {
               </svg>
             </div>
             <div>
-              <p className="font-semibold text-[#1a1a1a]">Instagram</p>
+              <p className="playfair-display-sc-bold text-[#1a1a1a]">Instagram</p>
               <p className="text-sm text-[#1a1a1a]/70">@abbyzbeautyy</p>
             </div>
           </a>
@@ -45,13 +47,13 @@ export default function Contact() {
               </svg>
             </div>
             <div>
-              <p className="font-semibold text-[#1a1a1a]">WhatsApp</p>
+              <p className="playfair-display-sc-bold text-[#1a1a1a]">WhatsApp</p>
               <p className="text-sm text-[#1a1a1a]/70">Book via WhatsApp</p>
             </div>
           </a>
         </div>
 
-        <div className="mt-8 space-y-2 text-[#1a1a1a]/80">
+        <div className="mt-8 space-y-2 text-[#1a1a1a]/80 playfair-display-sc-regular">
           <p>
             <a href={`tel:${PHONE}`} className="hover:text-[#E91E8C] transition-colors">
               {PHONE}

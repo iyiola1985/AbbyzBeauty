@@ -14,7 +14,7 @@ A high-end beauty salon website for luxury lash extensions and glam makeup servi
 - Hero with luxury aesthetic and soft overlay
 - About section with scroll reveal
 - Services / Price list with hover effects
-- Booking form with API route
+- Booking form with deposit → redirects to WhatsApp
 - Gallery with lash extension imagery
 - Testimonials carousel
 - Contact with Instagram & WhatsApp
@@ -31,10 +31,11 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Customization
 
-Update these in `src/components/Contact.tsx` and `src/components/Footer.tsx`:
+Update in `src/lib/services.ts`:
+- **WhatsApp number**: `WHATSAPP_NUMBER` (e.g. `447123456789` — no + or spaces)
 
+Update in `src/components/Contact.tsx`:
 - **Instagram**: `https://instagram.com/abbyzbeautyy`
-- **WhatsApp**: `https://wa.me/44XXXXXXXXXX` (replace with your number)
 - **Phone**: `+44 XXXX XXX XXX`
 - **Location**: `London, UK`
 
@@ -50,9 +51,13 @@ Then connect your repo to [Vercel](https://vercel.com) or run:
 npx vercel
 ```
 
-## Booking API
+## Booking Flow
 
-The `/api/booking` route receives form submissions. For production, integrate with:
+Customers fill the form and are redirected to WhatsApp with a pre-filled message and their deposit amount. Deposit is paid via WhatsApp to confirm the booking.
+
+## Booking API (optional)
+
+The `/api/booking` route can be used for logging. For production, integrate with:
 
 - Email (Resend, SendGrid)
 - Database (Vercel Postgres, Supabase)

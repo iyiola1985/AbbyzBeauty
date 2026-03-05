@@ -1,13 +1,15 @@
 "use client";
 
+import { WHATSAPP_NUMBER } from "@/lib/services";
+
 export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <p className="font-serif text-xl font-semibold">Abbyz Beautyy</p>
-            <p className="text-sm text-white/70 mt-1">
+            <p className="unifrakturcook-bold text-xl">Abbyz Beautyy</p>
+            <p className="playfair-display-sc-regular text-sm text-white/70 mt-1">
               Luxury Lash Extensions & Glam Makeup
             </p>
           </div>
@@ -24,7 +26,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://wa.me/44XXXXXXXXXX"
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/70 hover:text-green-400 transition-colors"
@@ -36,7 +38,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-white/60">
+        <div className="mt-8 pt-8 border-t border-white/10 text-center playfair-display-sc-regular text-sm text-white/60">
           © {new Date().getFullYear()} Abbyz Beautyy. All rights reserved.
         </div>
       </div>
