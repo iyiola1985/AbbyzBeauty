@@ -31,7 +31,7 @@ export default function Hero() {
             height={180}
             className="mx-auto mb-6 drop-shadow-lg"
           />
-          <h1 className="unifrakturcook-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-lg">
+          <h1 className="hero-brand-float unifrakturcook-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-lg">
             Abbyz Beautyy
           </h1>
           <p className="oi-regular text-lg sm:text-xl md:text-2xl text-white/95 mb-8 tracking-wide">

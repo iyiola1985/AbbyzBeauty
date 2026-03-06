@@ -38,8 +38,19 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-white/10 text-center playfair-display-sc-regular text-sm text-white/60">
-          © {new Date().getFullYear()} Abbyz Beautyy. All rights reserved.
+        <div className="mt-8 pt-8 border-t border-white/10 text-center playfair-display-sc-regular text-sm text-white/60 space-y-1">
+          <p>© {new Date().getFullYear()} Abbyz Beautyy. All rights reserved.</p>
+          <p>
+            Powered by{" "}
+            <a
+              href="https://sholatech.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-[#E91E8C]/90 transition-colors underline decoration-white/30 hover:decoration-[#E91E8C]/60 underline-offset-2"
+            >
+              sholatech.com
+            </a>
+          </p>
         </div>
       </div>
     </footer>

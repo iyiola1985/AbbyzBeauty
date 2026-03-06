@@ -8,6 +8,17 @@ export default function initAnimations() {
     // Hero text fade-in
     $(".hero-content").css({ opacity: 0 }).animate({ opacity: 1 }, 1200);
 
+    // Hero brand name floating animation
+    const floatBrand = () => {
+      const $el = $(".hero-brand-float");
+      if (!$el.length) return;
+      $el.css({ marginTop: 0 });
+      $el.animate({ marginTop: -8 }, 1500, "swing", function () {
+        $(this).animate({ marginTop: 0 }, 1500, "swing", floatBrand);
+      });
+    };
+    setTimeout(floatBrand, 1300);
+
     // Button hover glow (CSS handles most; jQuery adds extra class for emphasis)
     $(".hero-btn-primary").on("mouseenter", function () {
       $(this).addClass("shadow-[0_0_30px_rgba(233,30,140,0.6)]");
