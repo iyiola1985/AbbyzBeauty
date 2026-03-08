@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <p className="unifrakturcook-bold text-xl">Abbyz Beautyy</p>
-            <p className="playfair-display-sc-regular text-sm text-white/70 mt-1">
+            <p className="playfair-display-sc-regular text-sm sm:text-base text-white/80 mt-1">
               Luxury Lash Extensions & Glam Makeup
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-white/10 text-center playfair-display-sc-regular text-sm text-white/60 space-y-1">
+        <div className="mt-8 pt-8 border-t border-white/10 text-center playfair-display-sc-regular text-sm sm:text-base text-white/70 space-y-1">
           <p>© {new Date().getFullYear()} Abbyz Beautyy. All rights reserved.</p>
           <p>
             Powered by{" "}

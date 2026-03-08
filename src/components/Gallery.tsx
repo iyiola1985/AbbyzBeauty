@@ -50,7 +50,7 @@ export default function Gallery() {
         <h2 className="unifrakturcook-bold text-3xl sm:text-4xl md:text-5xl text-[#1a1a1a] text-center mb-4">
           Gallery
         </h2>
-        <p className="playfair-display-sc-regular text-[#1a1a1a]/70 text-center max-w-2xl mx-auto mb-16">
+        <p className="playfair-display-sc-regular text-[#2d2d2d] text-base sm:text-lg text-center max-w-2xl mx-auto mb-16">
           Explore our latest work—from classic lashes to mega volume and glam transformations.
         </p>
 

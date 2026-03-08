@@ -45,7 +45,7 @@ export default function Testimonials() {
                       </span>
                     ))}
                   </div>
-                  <p className="playfair-display-sc-regular-italic text-[#1a1a1a]/80 text-lg leading-relaxed">
+                  <p className="playfair-display-sc-regular-italic text-[#2d2d2d] text-base sm:text-lg leading-relaxed">
                     &ldquo;{t.text}&rdquo;
                   </p>
                 </div>

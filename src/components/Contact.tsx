@@ -32,7 +32,7 @@ export default function Contact() {
             </div>
             <div>
               <p className="playfair-display-sc-bold text-[#1a1a1a]">Instagram</p>
-              <p className="text-sm text-[#1a1a1a]/70">@abbyzbeautyy</p>
+              <p className="text-base text-[#2d2d2d]">@abbyzbeautyy</p>
             </div>
           </a>
           <a
@@ -48,12 +48,12 @@ export default function Contact() {
             </div>
             <div>
               <p className="playfair-display-sc-bold text-[#1a1a1a]">WhatsApp</p>
-              <p className="text-sm text-[#1a1a1a]/70">Book via WhatsApp</p>
+              <p className="text-base text-[#2d2d2d]">Book via WhatsApp</p>
             </div>
           </a>
         </div>
 
-        <div className="mt-8 space-y-2 text-[#1a1a1a]/80 playfair-display-sc-regular">
+        <div className="mt-8 space-y-2 text-[#2d2d2d] text-base playfair-display-sc-regular">
           <p>
             <a href={`tel:${PHONE}`} className="hover:text-[#E91E8C] transition-colors">
               {PHONE}

@@ -11,8 +11,8 @@ export default function Hero() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/Volume_lashes_2-3903c64a-2561-4fc5-a790-2a1d76676079.png"
-          alt="Luxury lash extensions"
+          src="/classic_lashes-c5660e81-13ef-4308-bc40-144382080083.png"
+          alt="Classic lash extensions"
           fill
           className="object-cover"
           priority
@@ -31,22 +31,22 @@ export default function Hero() {
             height={180}
             className="mx-auto mb-6 drop-shadow-lg"
           />
-          <h1 className="hero-brand-float unifrakturcook-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-lg">
+          <h1 className="hero-brand-float unifrakturcook-bold text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">
             Abbyz Beautyy
           </h1>
-          <p className="oi-regular text-lg sm:text-xl md:text-2xl text-white/95 mb-8 tracking-wide">
+          <p className="oi-regular text-base min-[400px]:text-lg sm:text-xl md:text-2xl text-white mb-8 tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)]">
             Luxury Lash Extensions & Glam Makeup
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#booking"
-              className="hero-btn-primary oi-regular px-8 py-4 bg-[#E91E8C] text-white rounded-full text-lg hover:shadow-[0_0_30px_rgba(233,30,140,0.6)] transition-all duration-500"
+              className="hero-btn-primary oi-regular px-6 py-3.5 sm:px-8 sm:py-4 bg-[#E91E8C] text-white rounded-full text-base sm:text-lg hover:shadow-[0_0_30px_rgba(233,30,140,0.6)] transition-all duration-500"
             >
               Book Appointment
             </a>
             <a
               href="#services"
-              className="hero-btn-secondary oi-regular px-8 py-4 border-2 border-white text-white rounded-full text-lg hover:bg-white hover:text-[#1a1a1a] transition-all duration-500"
+              className="hero-btn-secondary oi-regular px-6 py-3.5 sm:px-8 sm:py-4 border-2 border-white text-white rounded-full text-base sm:text-lg hover:bg-white hover:text-[#1a1a1a] transition-all duration-500"
             >
               View Price List
             </a>

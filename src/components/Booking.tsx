@@ -62,7 +62,7 @@ export default function Booking() {
         </h2>
 
         <div className="mb-8 p-6 bg-[#F5E1E6]/30 rounded-2xl border border-[#F5E1E6]">
-          <p className="playfair-display-sc-regular text-[#1a1a1a]/90 text-center">
+          <p className="playfair-display-sc-regular text-[#2d2d2d] text-base sm:text-lg text-center">
             <span className="font-semibold text-[#E91E8C]">Deposit required</span> to confirm your
             booking. You&apos;ll pay via WhatsApp after submitting.
           </p>
@@ -72,7 +72,7 @@ export default function Booking() {
           <div className="booking-success mb-8 p-6 bg-[#F5E1E6]/50 rounded-2xl text-center text-[#1a1a1a]">
             <span className="text-4xl mb-2 block">✨</span>
             <p className="font-semibold">WhatsApp has opened!</p>
-            <p className="text-sm mt-1 opacity-80">
+            <p className="text-base mt-1 opacity-90">
               Send the message and pay your £{lastDeposit} deposit to confirm your booking.
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function Booking() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="name" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
+            <label htmlFor="name" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
               Name
             </label>
             <input
@@ -95,12 +95,12 @@ export default function Booking() {
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
+              className="w-full px-4 py-3 text-base rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
               placeholder="Your name"
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
+            <label htmlFor="phone" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
               Phone
             </label>
             <input
@@ -109,12 +109,12 @@ export default function Booking() {
               required
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
+              className="w-full px-4 py-3 text-base rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
               placeholder="Your phone number"
             />
           </div>
           <div>
-            <label htmlFor="email" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
+            <label htmlFor="email" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
               Email
             </label>
             <input
@@ -123,12 +123,12 @@ export default function Booking() {
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
+              className="w-full px-4 py-3 text-base rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
               placeholder="Your email"
             />
           </div>
           <div>
-            <label htmlFor="service" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
+            <label htmlFor="service" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
               Service
             </label>
             <select
@@ -136,7 +136,7 @@ export default function Booking() {
               required
               value={formData.service}
               onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
+              className="w-full px-4 py-3 text-base rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
             >
               <option value="">Select a service</option>
               {services.map((s) => (
@@ -149,10 +149,10 @@ export default function Booking() {
 
           {deposit > 0 && (
             <div className="p-4 rounded-xl bg-[#E91E8C]/10 border border-[#E91E8C]/20">
-              <p className="text-sm font-medium text-[#1a1a1a]">
-                Deposit to pay via WhatsApp: <span className="oi-regular text-[#E91E8C] text-base">£{deposit}</span>
+              <p className="text-base font-medium text-[#1a1a1a]">
+                Deposit to pay via WhatsApp: <span className="oi-regular text-[#E91E8C]">£{deposit}</span>
               </p>
-              <p className="text-xs text-[#1a1a1a]/70 mt-1">
+              <p className="text-sm text-[#2d2d2d] mt-1">
                 You&apos;ll be redirected to WhatsApp to send your booking and pay the deposit.
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function Booking() {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="date" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
+              <label htmlFor="date" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
                 Preferred Date
               </label>
               <input
@@ -169,11 +169,11 @@ export default function Booking() {
                 required
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
+                className="w-full px-4 py-3 text-base rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
               />
             </div>
             <div>
-              <label htmlFor="time" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
+              <label htmlFor="time" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
                 Preferred Time
               </label>
               <input
@@ -182,12 +182,12 @@ export default function Booking() {
                 required
                 value={formData.time}
                 onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
+                className="w-full px-4 py-3 text-base rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all"
               />
             </div>
           </div>
           <div>
-            <label htmlFor="notes" className="block playfair-display-sc-bold text-sm text-[#1a1a1a] mb-1">
+            <label htmlFor="notes" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
               Notes
             </label>
             <textarea
@@ -195,13 +195,13 @@ export default function Booking() {
               rows={3}
               value={formData.notes}
               onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all resize-none"
+              className="w-full px-4 py-3 text-base rounded-xl border border-[#E8DED5] focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] outline-none transition-all resize-none"
               placeholder="Any special requests?"
             />
           </div>
           <button
             type="submit"
-            className="w-full py-4 bg-[#E91E8C] text-white oi-regular rounded-xl hover:bg-[#d0187a] hover:shadow-[0_0_30px_rgba(233,30,140,0.4)] transition-all duration-500 flex items-center justify-center gap-2 text-lg"
+            className="w-full py-4 bg-[#E91E8C] text-white oi-regular rounded-xl hover:bg-[#d0187a] hover:shadow-[0_0_30px_rgba(233,30,140,0.4)] transition-all duration-500 flex items-center justify-center gap-2 text-base sm:text-lg"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
