@@ -45,16 +45,16 @@ function ServiceCard({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5">
-        <span className="text-xs sm:text-sm font-medium text-[#E91E8C] tracking-wider uppercase mb-1">
+        <span className="text-sm sm:text-base font-semibold text-white tracking-wider uppercase mb-1 [text-shadow:0_1px_4px_rgba(0,0,0,0.8)]">
           {category}
         </span>
-        <h3 className="playfair-display-sc-bold text-base sm:text-lg md:text-xl text-white leading-tight [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
+        <h3 className="font-sans font-bold text-lg sm:text-xl md:text-2xl text-white leading-tight [text-shadow:0_2px_6px_rgba(0,0,0,0.8)]">
           {name}
         </h3>
-        <p className="oi-regular text-xl sm:text-2xl text-white mt-1 [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
+        <p className="font-sans font-bold text-2xl sm:text-3xl text-white mt-1 [text-shadow:0_2px_6px_rgba(0,0,0,0.8)]">
           £{price}
         </p>
-        <span className="mt-2 inline-block text-sm sm:text-base font-medium text-white/95 group-hover:text-[#E91E8C] transition-colors">
+        <span className="mt-2 inline-block text-base sm:text-lg font-semibold text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.6)] group-hover:text-[#E91E8C] transition-colors">
           Book Now →
         </span>
       </div>
@@ -66,13 +66,13 @@ export default function Services() {
   return (
     <section id="services" className="scroll-reveal py-16 sm:py-24 md:py-28 bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base sm:text-lg text-center mb-3 sm:mb-4">
+        <p className="font-sans font-bold text-[#E91E8C] tracking-wider uppercase text-base sm:text-lg text-center mb-3 sm:mb-4">
           Our Pricing
         </p>
-        <h2 className="unifrakturcook-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center mb-3 sm:mb-4 [text-shadow:0_1px_2px_rgba(0,0,0,0.3)]">
+        <h2 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center mb-3 sm:mb-4 [text-shadow:0_2px_4px_rgba(0,0,0,0.4)]">
           Price List
         </h2>
-        <p className="playfair-display-sc-regular text-white/90 text-base sm:text-lg text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+        <p className="font-sans text-white text-base sm:text-lg text-center max-w-2xl mx-auto mb-10 sm:mb-16 font-medium">
           From classic lashes to full glam—transparent pricing for every style.
         </p>
 

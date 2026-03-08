@@ -8,7 +8,7 @@ export default function About() {
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="unifrakturcook-bold text-3xl sm:text-4xl md:text-5xl text-[#1a1a1a] mb-10">
-          About me
+          About Abbyz Beauty
         </h2>
         <div className="playfair-display-sc-regular text-[#2d2d2d] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto space-y-6 text-left sm:text-center">
           <p>
