@@ -52,41 +52,41 @@ export default function Booking() {
   };
 
   return (
-    <section id="booking" className="scroll-reveal py-20 sm:py-28 bg-white">
+    <section id="booking" className="scroll-reveal py-16 sm:py-24 md:py-28 bg-[#FDFBFB]">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base text-center mb-4">
+        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base sm:text-lg text-center mb-3 sm:mb-4">
           Book Your Appointment
         </p>
-        <h2 className="unifrakturcook-bold text-3xl sm:text-4xl text-[#1a1a1a] text-center mb-12">
+        <h2 className="unifrakturcook-bold text-2xl sm:text-3xl md:text-4xl text-[#1a1a1a] text-center mb-8 sm:mb-12">
           Ready for Your Glam Experience?
         </h2>
 
-        <div className="mb-8 p-6 bg-[#F5E1E6]/30 rounded-2xl border border-[#F5E1E6]">
-          <p className="playfair-display-sc-regular text-[#2d2d2d] text-base sm:text-lg text-center">
+        <div className="mb-6 sm:mb-8 p-5 sm:p-6 bg-[#F5E1E6]/40 rounded-2xl border-2 border-[#F5E1E6]">
+          <p className="playfair-display-sc-regular text-[#1a1a1a] text-base sm:text-lg text-center font-medium">
             <span className="font-semibold text-[#E91E8C]">Deposit required</span> to confirm your
             booking. You&apos;ll pay via WhatsApp after submitting.
           </p>
         </div>
 
         {status === "success" && (
-          <div className="booking-success mb-8 p-6 bg-[#F5E1E6]/50 rounded-2xl text-center text-[#1a1a1a]">
+          <div className="booking-success mb-6 sm:mb-8 p-5 sm:p-6 bg-[#F5E1E6]/60 rounded-2xl text-center text-[#1a1a1a]">
             <span className="text-4xl mb-2 block">✨</span>
-            <p className="font-semibold">WhatsApp has opened!</p>
-            <p className="text-base mt-1 opacity-90">
+            <p className="playfair-display-sc-bold text-lg sm:text-xl">WhatsApp has opened!</p>
+            <p className="text-base sm:text-lg mt-1 text-[#2d2d2d]">
               Send the message and pay your £{lastDeposit} deposit to confirm your booking.
             </p>
           </div>
         )}
 
         {status === "error" && (
-          <div className="mb-8 p-4 bg-red-50 rounded-2xl text-red-700 text-center text-sm">
+          <div className="mb-6 sm:mb-8 p-4 sm:p-5 bg-red-50 rounded-2xl text-red-700 text-center text-base">
             Please try again or contact us directly via WhatsApp.
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="name" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
+            <label htmlFor="name" className="block playfair-display-sc-bold text-base sm:text-lg text-[#1a1a1a] mb-1.5">
               Name
             </label>
             <input
@@ -100,7 +100,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
+            <label htmlFor="phone" className="block playfair-display-sc-bold text-base sm:text-lg text-[#1a1a1a] mb-1.5">
               Phone
             </label>
             <input
@@ -114,7 +114,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
+            <label htmlFor="email" className="block playfair-display-sc-bold text-base sm:text-lg text-[#1a1a1a] mb-1.5">
               Email
             </label>
             <input
@@ -128,7 +128,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label htmlFor="service" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
+            <label htmlFor="service" className="block playfair-display-sc-bold text-base sm:text-lg text-[#1a1a1a] mb-1.5">
               Service
             </label>
             <select
@@ -148,11 +148,11 @@ export default function Booking() {
           </div>
 
           {deposit > 0 && (
-            <div className="p-4 rounded-xl bg-[#E91E8C]/10 border border-[#E91E8C]/20">
-              <p className="text-base font-medium text-[#1a1a1a]">
-                Deposit to pay via WhatsApp: <span className="oi-regular text-[#E91E8C]">£{deposit}</span>
+            <div className="p-4 sm:p-5 rounded-xl bg-[#E91E8C]/15 border-2 border-[#E91E8C]/30">
+              <p className="text-base sm:text-lg font-medium text-[#1a1a1a]">
+                Deposit to pay via WhatsApp: <span className="oi-regular text-[#E91E8C] text-lg sm:text-xl">£{deposit}</span>
               </p>
-              <p className="text-sm text-[#2d2d2d] mt-1">
+              <p className="text-sm sm:text-base text-[#2d2d2d] mt-1">
                 You&apos;ll be redirected to WhatsApp to send your booking and pay the deposit.
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function Booking() {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="date" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
+              <label htmlFor="date" className="block playfair-display-sc-bold text-base sm:text-lg text-[#1a1a1a] mb-1.5">
                 Preferred Date
               </label>
               <input
@@ -173,7 +173,7 @@ export default function Booking() {
               />
             </div>
             <div>
-              <label htmlFor="time" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
+              <label htmlFor="time" className="block playfair-display-sc-bold text-base sm:text-lg text-[#1a1a1a] mb-1.5">
                 Preferred Time
               </label>
               <input
@@ -187,7 +187,7 @@ export default function Booking() {
             </div>
           </div>
           <div>
-            <label htmlFor="notes" className="block playfair-display-sc-bold text-base text-[#1a1a1a] mb-1">
+            <label htmlFor="notes" className="block playfair-display-sc-bold text-base sm:text-lg text-[#1a1a1a] mb-1.5">
               Notes
             </label>
             <textarea

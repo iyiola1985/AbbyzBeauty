@@ -42,23 +42,23 @@ const galleryImages = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="scroll-reveal py-20 sm:py-28 bg-[#FDFBFB]">
+    <section id="gallery" className="scroll-reveal py-16 sm:py-24 md:py-28 bg-[#FDFBFB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base text-center mb-4">
+        <p className="unifrakturcook-bold text-[#E91E8C] tracking-[0.15em] uppercase text-base sm:text-lg text-center mb-3 sm:mb-4">
           Portfolio
         </p>
-        <h2 className="unifrakturcook-bold text-3xl sm:text-4xl md:text-5xl text-[#1a1a1a] text-center mb-4">
+        <h2 className="unifrakturcook-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] text-center mb-3 sm:mb-4">
           Gallery
         </h2>
-        <p className="playfair-display-sc-regular text-[#2d2d2d] text-base sm:text-lg text-center max-w-2xl mx-auto mb-16">
+        <p className="playfair-display-sc-regular text-[#2d2d2d] text-base sm:text-lg text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           Explore our latest work—from classic lashes to mega volume and glam transformations.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {galleryImages.map((img) => (
             <div
               key={img.src}
-              className="gallery-item group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(233,30,140,0.2)] transition-all duration-500"
+              className="gallery-item group relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_40px_rgba(233,30,140,0.2)] transition-all duration-500"
             >
               <Image
                 src={img.src}
@@ -66,9 +66,12 @@ export default function Gallery() {
                 width={400}
                 height={400}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                <span className="text-white text-sm font-medium">{img.category}</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end p-3 sm:p-4">
+                <span className="text-white text-sm sm:text-base font-medium [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
+                  {img.category}
+                </span>
               </div>
             </div>
           ))}
